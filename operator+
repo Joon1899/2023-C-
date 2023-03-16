@@ -1,0 +1,38 @@
+#include <iostream> 
+using namespace std; 
+
+class CRect{
+    private : 
+    int w,h; 
+    
+    public : 
+    CRect(int _w, int _h){
+        w = _w; 
+        h = _h; 
+    }
+    CRect(){
+        w = 0; 
+        h = 0; 
+    }
+    void printxy(){
+        cout << w << " " << h << endl; 
+    }
+    void printArea(){
+        cout << w*h << endl; 
+    }
+    CRect operator+(CRect r){
+        CRect t; 
+        t.w = r.w + w; 
+        t.h = r.h + h;
+        return t; 
+    }
+};
+
+
+int main(){
+    CRect p1(1,1), p2(2,2), p3; 
+    p3 = p1 + p2; 
+    p3.printxy();
+    p3.printArea();
+    return 0; 
+}
