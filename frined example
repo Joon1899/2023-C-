@@ -1,0 +1,17 @@
+#include <iostream> 
+using namespace std; 
+
+class CPnt{
+    int x; 
+    public : 
+    CPnt(int x){
+        this->x = x; 
+    }
+    friend int main(); 
+};
+
+int main(){
+    CPnt p(1); 
+    cout << p.x << endl; 
+    return 0; 
+}
