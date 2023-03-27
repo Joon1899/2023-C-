@@ -1,0 +1,26 @@
+#include <iostream> 
+using namespace std; 
+
+class CPoly{
+    protected : 
+    int w,h; 
+};
+
+class CRect:public CPoly{
+  public : 
+  CRect(int _w, int _h){
+      w = _w; 
+      h = _h; 
+  }
+  int Area(){
+      return w*h; 
+  }
+};
+
+int main(){
+    CRect r(1,2); 
+    CRect* p; 
+    p = &r; 
+    cout << p->Area() << endl; 
+    return 0; 
+}
